@@ -56,18 +56,26 @@ int main(int argc, char **argv)
     //string outGrayImgFileName =  outDir + "/grayParallel.png";
     //imwrite(outGrayImgFileName, imgGray);
     
-    Mat clachRst;
-    ApplyCLAHE(imgGray, clachRst);
-    imgGray.release();
-    string claheFhFN =  outDir + "/clachFh.png";
-    imwrite(claheFhFN, clachRst);
-    
-    Mat frgiRespRz8U;
-    CalcFrgiResp(clachRst, 2, frgiRespRz8U);
-    clachRst.release();
-    
-    string frgiRespImgFile =  outDir + "/fhFrgiResp.png";
-    bool isOK = imwrite(frgiRespImgFile, frgiRespRz8U);
+    for(int i=5; i<=15; )
+    {
+        Mat blurGrImg;
+        blur(imgGray, blurGrImg, Size(i, i));
+        Mat clachRst;
+        ApplyCLAHE(blurGrImg, clachRst);
+        
+        string claheFhFN =  outDir + "/clachFh" + to_string(i) + ".png";
+        imwrite(claheFhFN, clachRst);
+        
+        Mat frgiRespRz8U;
+        CalcFrgiResp(clachRst, 2, frgiRespRz8U);
+        clachRst.release();
+        
+        string frgiRespImgFile =  outDir + "/fhFrgiResp" + to_string(i) + ".png";
+        //bool isOK =
+        imwrite(frgiRespImgFile, frgiRespRz8U);
+        
+        i += 2;
+    }
     
     return 0;
 }
