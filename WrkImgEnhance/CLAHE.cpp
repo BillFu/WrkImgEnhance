@@ -7,10 +7,12 @@
 
 #include "CLAHE.hpp"
 
-void ApplyCLAHE(const Mat& inImg, Mat& outImg)
+void ApplyCLAHE(const Mat& inImg,
+                int gridSize,
+                Mat& outImg)
 {
     cv::Ptr<CLAHE> clahe = cv::createCLAHE();
     clahe->setClipLimit(4);
-    clahe->setTilesGridSize(cv::Size(50, 50));
+    clahe->setTilesGridSize(cv::Size(gridSize, gridSize));
     clahe->apply(inImg, outImg);
 }

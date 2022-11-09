@@ -53,29 +53,31 @@ int main(int argc, char **argv)
     cv::Mat imgGray;
     cvtColor(inImg, imgGray, COLOR_BGR2GRAY);
 
-    //string outGrayImgFileName =  outDir + "/grayParallel.png";
-    //imwrite(outGrayImgFileName, imgGray);
+    string outGrayImgFileName =  outDir + "/grayParallel.png";
+    imwrite(outGrayImgFileName, imgGray);
     
-    for(int i=5; i<=15; )
-    {
-        Mat blurGrImg;
-        blur(imgGray, blurGrImg, Size(i, i));
-        Mat clachRst;
-        ApplyCLAHE(blurGrImg, clachRst);
-        
-        string claheFhFN =  outDir + "/clachFh" + to_string(i) + ".png";
-        imwrite(claheFhFN, clachRst);
-        
-        Mat frgiRespRz8U;
-        CalcFrgiResp(clachRst, 2, frgiRespRz8U);
-        clachRst.release();
-        
-        string frgiRespImgFile =  outDir + "/fhFrgiResp" + to_string(i) + ".png";
-        //bool isOK =
-        imwrite(frgiRespImgFile, frgiRespRz8U);
-        
-        i += 2;
-    }
+    /*
+    int burKerS = 9;
+
+    Mat blurGrImg;
+    blur(imgGray, blurGrImg, Size(burKerS, burKerS));
+    Mat clachRst;
+    int gridSize = 24;
+    ApplyCLAHE(blurGrImg, gridSize, clachRst);
+    
+    string claheFhFN =  outDir + "/clachFhb" +
+        to_string(burKerS) + "_g" + to_string(gridSize) + ".png";
+    imwrite(claheFhFN, clachRst);
+    
+    Mat frgiRespRz8U;
+    CalcFrgiResp(clachRst, 2, frgiRespRz8U);
+    clachRst.release();
+    
+    string frgiRespImgFile =  outDir + "/frgiFhb" +
+        to_string(burKerS) + "_g" + to_string(gridSize) + ".png";
+
+    imwrite(frgiRespImgFile, frgiRespRz8U);
+    */
     
     return 0;
 }

@@ -13,6 +13,8 @@
 using namespace std;
 using namespace cv;
 
-void ApplyCLAHE(const Mat& inImg, Mat& outImg);
+void ApplyCLAHE(const Mat& inImg,
+                int gridSize,
+                Mat& outImg);
 
 #endif /* CLAHE_hpp */
