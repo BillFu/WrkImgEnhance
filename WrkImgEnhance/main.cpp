@@ -53,10 +53,9 @@ int main(int argc, char **argv)
     cv::Mat imgGray;
     cvtColor(inImg, imgGray, COLOR_BGR2GRAY);
 
-    string outGrayImgFileName =  outDir + "/grayParallel.png";
-    imwrite(outGrayImgFileName, imgGray);
+    //string outGrayImgFileName =  outDir + "/grayParallel.png";
+    //imwrite(outGrayImgFileName, imgGray);
     
-    /*
     int burKerS = 9;
 
     Mat blurGrImg;
@@ -77,7 +76,6 @@ int main(int argc, char **argv)
         to_string(burKerS) + "_g" + to_string(gridSize) + ".png";
 
     imwrite(frgiRespImgFile, frgiRespRz8U);
-    */
     
     return 0;
 }
