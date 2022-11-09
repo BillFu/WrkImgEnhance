@@ -55,17 +55,26 @@ int main(int argc, char **argv)
 
     //string outGrayImgFileName =  outDir + "/grayParallel.png";
     //imwrite(outGrayImgFileName, imgGray);
+    int imgW = imgGray.cols;
+    int imgH = imgGray.rows;
     
-    int burKerS = 9;
-
+    // 这个公式仅对前额区域有效；若imgW表示图像全域或其他子区域，这个公式需要调整。
+    // 也许这个公式以后需要调整为普遍适用的公式。
+    int blurKerS = imgW / 142; // 1/142 约等于9/1286
+    if(blurKerS % 2 == 0)
+        blurKerS += 1;  // make it be a odd number
+    
     Mat blurGrImg;
-    blur(imgGray, blurGrImg, Size(burKerS, burKerS));
+    blur(imgGray, blurGrImg, Size(blurKerS, blurKerS));
+    
     Mat clachRst;
-    int gridSize = 24;
+    // 这个公式仅对前额区域有效；若imgW表示图像全域或其他子区域，这个公式需要调整。
+    // 也许这个公式以后需要调整为普遍适用的公式。
+    int gridSize = imgW / 54; // 1/54与24/1286有关
     ApplyCLAHE(blurGrImg, gridSize, clachRst);
     
     string claheFhFN =  outDir + "/clachFhb" +
-        to_string(burKerS) + "_g" + to_string(gridSize) + ".png";
+        to_string(blurKerS) + "_g" + to_string(gridSize) + ".png";
     imwrite(claheFhFN, clachRst);
     
     Mat frgiRespRz8U;
@@ -73,7 +82,7 @@ int main(int argc, char **argv)
     clachRst.release();
     
     string frgiRespImgFile =  outDir + "/frgiFhb" +
-        to_string(burKerS) + "_g" + to_string(gridSize) + ".png";
+        to_string(blurKerS) + "_g" + to_string(gridSize) + ".png";
 
     imwrite(frgiRespImgFile, frgiRespRz8U);
     
