@@ -1,0 +1,9 @@
+/usr/local/Cellar/opencv/4.6.0/include/opencv4 
+${PROJECT_DIR}/include 
+/Users/meicet/nlohmann_json/include
+
+-lopencv_core -lopencv_imgcodecs -lopencv_calib3d -lopencv_highgui -lopencv_imgproc 
+
+/usr/local/Cellar/opencv/4.6.0/lib $(PROJECT_DIR)/m1_lib $(PROJECT_DIR)/intel_lib
+
+cp ${TARGET_BUILD_DIR}/${TARGET_NAME} ${PROJECT_DIR}/bin/${TARGET_NAME}
