@@ -87,12 +87,12 @@ cv::Mat BdKerAspRatio(int kerSize,
     return kernel;
 }
 
-int kernelSize = 21;
+int kernelSize = 25;
 int pos_sigma= 8;
 int pos_lambda = 38;
 int pos_theta = 47;
 int pos_psi = 180;
-int pos_gamma = 50;
+int pos_gamma = 70;
 
 Mat inImg;
 cv::Mat src_f;
