@@ -87,12 +87,12 @@ cv::Mat BdKerAspRatio(int kerSize,
     return kernel;
 }
 
-int kernelSize = 25;
+int kernelSize = 21;
 int pos_sigma= 8;
-int pos_lambda = 38;
-int pos_theta = 47;
-int pos_psi = 180;
-int pos_gamma = 70;
+int pos_lambda = 41;
+int pos_theta = 76;
+int pos_psi = 125;
+int pos_gamma = 57;
 
 Mat inImg;
 cv::Mat src_f;
@@ -118,10 +118,6 @@ void ProcessAR(int , void *)
     
     cv::imshow("Kernel", Lkernel);
     
-    cv::Mat mag;
-    cv::pow(gaborMap, 2.0, mag);
-    cv::imshow("Mag", mag);
-    
     imshow("SrcImg", inImg);
 }
 
@@ -142,10 +138,6 @@ void Process(int , void *)
     Lkernel += 0.5;
     
     cv::imshow("Kernel", Lkernel);
-    
-    cv::Mat mag;
-    cv::pow(gaborMap, 2.0, mag);
-    cv::imshow("Mag", mag);
 }
 
 int main(int argc, char** argv)
