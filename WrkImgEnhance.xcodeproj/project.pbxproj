@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB20553D291DE38F00E359F5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB20553C291DE38F00E359F5 /* main.cpp */; };
+		CB6C65AC292213BF005FF242 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB6C65AB292213BF005FF242 /* main.cpp */; };
 		CBA5E221291B734C00B259A8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBA5E220291B734C00B259A8 /* main.cpp */; };
 		CBA5E22A291B82C900B259A8 /* CLAHE.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBA5E228291B82C900B259A8 /* CLAHE.cpp */; };
 		CBA5E22D291B852500B259A8 /* WrinkleFrangi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBA5E22C291B852500B259A8 /* WrinkleFrangi.cpp */; };
@@ -16,6 +17,15 @@
 
 /* Begin PBXCopyFilesBuildPhase section */
 		CB205538291DE38F00E359F5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		CB6C65A7292213BF005FF242 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -38,6 +48,8 @@
 /* Begin PBXFileReference section */
 		CB20553A291DE38F00E359F5 /* GaborExperiment */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GaborExperiment; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB20553C291DE38F00E359F5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CB6C65A9292213BF005FF242 /* GabMapPostProc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GabMapPostProc; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB6C65AB292213BF005FF242 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		CBA5E21D291B734C00B259A8 /* WrkImgEnhance */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WrkImgEnhance; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA5E220291B734C00B259A8 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		CBA5E228291B82C900B259A8 /* CLAHE.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CLAHE.cpp; sourceTree = "<group>"; };
@@ -50,6 +62,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		CB205537291DE38F00E359F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB6C65A6292213BF005FF242 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -74,11 +93,20 @@
 			path = GaborExperiment;
 			sourceTree = "<group>";
 		};
+		CB6C65AA292213BF005FF242 /* GabMapPostProc */ = {
+			isa = PBXGroup;
+			children = (
+				CB6C65AB292213BF005FF242 /* main.cpp */,
+			);
+			path = GabMapPostProc;
+			sourceTree = "<group>";
+		};
 		CBA5E214291B734C00B259A8 = {
 			isa = PBXGroup;
 			children = (
 				CBA5E21F291B734C00B259A8 /* WrkImgEnhance */,
 				CB20553B291DE38F00E359F5 /* GaborExperiment */,
+				CB6C65AA292213BF005FF242 /* GabMapPostProc */,
 				CBA5E21E291B734C00B259A8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +116,7 @@
 			children = (
 				CBA5E21D291B734C00B259A8 /* WrkImgEnhance */,
 				CB20553A291DE38F00E359F5 /* GaborExperiment */,
+				CB6C65A9292213BF005FF242 /* GabMapPostProc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,6 +156,24 @@
 			productReference = CB20553A291DE38F00E359F5 /* GaborExperiment */;
 			productType = "com.apple.product-type.tool";
 		};
+		CB6C65A8292213BF005FF242 /* GabMapPostProc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB6C65AF292213BF005FF242 /* Build configuration list for PBXNativeTarget "GabMapPostProc" */;
+			buildPhases = (
+				CB6C65A5292213BF005FF242 /* Sources */,
+				CB6C65A6292213BF005FF242 /* Frameworks */,
+				CB6C65A7292213BF005FF242 /* CopyFiles */,
+				CB6C65B0292213DC005FF242 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GabMapPostProc;
+			productName = GabMapPostProc;
+			productReference = CB6C65A9292213BF005FF242 /* GabMapPostProc */;
+			productType = "com.apple.product-type.tool";
+		};
 		CBA5E21C291B734C00B259A8 /* WrkImgEnhance */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CBA5E224291B734C00B259A8 /* Build configuration list for PBXNativeTarget "WrkImgEnhance" */;
@@ -157,6 +204,9 @@
 					CB205539291DE38F00E359F5 = {
 						CreatedOnToolsVersion = 14.1;
 					};
+					CB6C65A8292213BF005FF242 = {
+						CreatedOnToolsVersion = 14.1;
+					};
 					CBA5E21C291B734C00B259A8 = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -177,12 +227,30 @@
 			targets = (
 				CBA5E21C291B734C00B259A8 /* WrkImgEnhance */,
 				CB205539291DE38F00E359F5 /* GaborExperiment */,
+				CB6C65A8292213BF005FF242 /* GabMapPostProc */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		CB205541291DE3F900E359F5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncp ${TARGET_BUILD_DIR}/${TARGET_NAME} ${PROJECT_DIR}/bin/${TARGET_NAME}\n";
+		};
+		CB6C65B0292213DC005FF242 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -227,6 +295,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CB6C65A5292213BF005FF242 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB6C65AC292213BF005FF242 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CBA5E219291B734C00B259A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -247,7 +323,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
 					/usr/local/Cellar/opencv/4.6.0/include/opencv4,
-					/Users/fuliye/nlohmann_json/include,
+					/Users/meicet/nlohmann_json/include,
 				);
 				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/opencv/4.6.0/lib;
 				OTHER_LDFLAGS = (
@@ -267,7 +343,47 @@
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
 					/usr/local/Cellar/opencv/4.6.0/include/opencv4,
-					/Users/fuliye/nlohmann_json/include,
+					/Users/meicet/nlohmann_json/include,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/opencv/4.6.0/lib;
+				OTHER_LDFLAGS = (
+					"-lopencv_core",
+					"-lopencv_imgcodecs",
+					"-lopencv_calib3d",
+					"-lopencv_highgui",
+					"-lopencv_imgproc",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CB6C65AD292213BF005FF242 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/opencv/4.6.0/include/opencv4,
+					/Users/meicet/nlohmann_json/include,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/opencv/4.6.0/lib;
+				OTHER_LDFLAGS = (
+					"-lopencv_core",
+					"-lopencv_imgcodecs",
+					"-lopencv_calib3d",
+					"-lopencv_highgui",
+					"-lopencv_imgproc",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CB6C65AE292213BF005FF242 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/opencv/4.6.0/include/opencv4,
+					/Users/meicet/nlohmann_json/include,
 				);
 				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/opencv/4.6.0/lib;
 				OTHER_LDFLAGS = (
@@ -442,6 +558,15 @@
 			buildConfigurations = (
 				CB20553E291DE38F00E359F5 /* Debug */,
 				CB20553F291DE38F00E359F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB6C65AF292213BF005FF242 /* Build configuration list for PBXNativeTarget "GabMapPostProc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB6C65AD292213BF005FF242 /* Debug */,
+				CB6C65AE292213BF005FF242 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

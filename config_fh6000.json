@@ -1,5 +1,5 @@
 {
 	"InImg":					"images/Peter6000/grayParaFh.png",
 	"OutDir":					"result/Peter6000",
-	"GaborKerSize":					42
+	"GaborKerSize":				43
 }

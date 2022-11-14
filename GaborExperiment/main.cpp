@@ -155,8 +155,12 @@ int main(int argc, char** argv)
         
     string inImgFile = config_json.at("InImg");
     outDir = config_json.at("OutDir");
+    int kerSize0 = config_json.at("GaborKerSize");
+    if(kerSize0 %2 ==0)
+        kerSize0++;
     
-    
+    kernelSize = kerSize0;
+
     // Load Input Image
     inImg = cv::imread(inImgFile.c_str());
     if(inImg.empty())

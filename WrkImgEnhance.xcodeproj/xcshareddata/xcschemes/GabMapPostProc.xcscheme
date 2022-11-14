@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CB205539291DE38F00E359F5"
-               BuildableName = "GaborExperiment"
-               BlueprintName = "GaborExperiment"
+               BlueprintIdentifier = "CB6C65A8292213BF005FF242"
+               BuildableName = "GabMapPostProc"
+               BlueprintName = "GabMapPostProc"
                ReferencedContainer = "container:WrkImgEnhance.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,15 +46,15 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CB205539291DE38F00E359F5"
-            BuildableName = "GaborExperiment"
-            BlueprintName = "GaborExperiment"
+            BlueprintIdentifier = "CB6C65A8292213BF005FF242"
+            BuildableName = "GabMapPostProc"
+            BlueprintName = "GabMapPostProc"
             ReferencedContainer = "container:WrkImgEnhance.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "config_fh6000.json"
+            argument = "gabpp_peter3264.json"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
@@ -69,9 +69,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CB205539291DE38F00E359F5"
-            BuildableName = "GaborExperiment"
-            BlueprintName = "GaborExperiment"
+            BlueprintIdentifier = "CB6C65A8292213BF005FF242"
+            BuildableName = "GabMapPostProc"
+            BlueprintName = "GabMapPostProc"
             ReferencedContainer = "container:WrkImgEnhance.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
