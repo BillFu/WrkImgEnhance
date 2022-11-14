@@ -209,14 +209,20 @@ int main(int argc, const char * argv[])
     imshow("Binary Result", WrkBi );
     
     Mat element3 = getStructuringElement(
-                MORPH_ELLIPSE,Size(21, 1));
+                MORPH_ELLIPSE, Size(21, 3));
     Mat DilateWrkBi;
+    
+    Mat ErodeWrkBi;
 
-    dilate(WrkBi, DilateWrkBi, element3);
-    imshow("DilateWrkBi", DilateWrkBi);
+    dilate(WrkBi, DilateWrkBi, element3, Point2i(-1,-1), 1);
+    erode(DilateWrkBi, ErodeWrkBi, element3, Point2i(-1,-1), 1);
+    DilateWrkBi.release();
+    
+    //imshow("DilateWrkBi", DilateWrkBi);
+    imshow("ErodeWrkBi", ErodeWrkBi);
     
     CONTOURS Cts;
-    findContours(DilateWrkBi, Cts, RETR_EXTERNAL, CHAIN_APPROX_NONE);
+    findContours(ErodeWrkBi, Cts, RETR_EXTERNAL, CHAIN_APPROX_NONE);
     
     CONTOURS::const_iterator it_ct = Cts.begin();
     unsigned long ct_size = Cts.size();
@@ -224,7 +230,7 @@ int main(int argc, const char * argv[])
     CONTOURS wrkCts;
     for (unsigned int i = 0; i < ct_size; ++i)
     {
-        if (it_ct->size() >= 40)
+        if (it_ct->size() >= 80)
         {
             wrkCts.push_back(Cts[i]);
         }
@@ -242,7 +248,7 @@ int main(int argc, const char * argv[])
         double ecc = eccentricity2(wrkCts[i]);
         //cout << "ecc: " << ecc << endl;
         
-        if (ecc > 5.0)
+        if (ecc > 4.0)
         {
             finalWrkCts.push_back(wrkCts[i]);
         }
@@ -252,14 +258,7 @@ int main(int argc, const char * argv[])
     
     Mat canvas2(inImg.size(), CV_8UC1, Scalar(0));
     drawContours(canvas2, finalWrkCts, -1, cv::Scalar(255), FILLED, 1);
-    
-    //vector<int> projY;
-    // projOnAxisY(canvas2, projY);
-    Mat projY = projOnAxisYV2(canvas2);
-
     imshow("finalWrkCts", canvas2);
-    
-    drawHistogram(projY, 400, 1024, hist.rows, Scalar(255, 255, 255), 2);
 
     waitKey(0);
     
