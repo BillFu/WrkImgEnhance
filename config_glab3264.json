@@ -1,4 +1,5 @@
 {
 	"InImg":					"images/Peter3264/glabella.jpg",
-	"OutDir":					"result/Peter3264"
+	"OutDir":					"result/Peter3264",
+	"GaborKerSize":				21
 }
