@@ -10,6 +10,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <algorithm>
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
@@ -110,7 +111,16 @@ void ProcessAR(int , void *)
     
     cv::filter2D(src_f, gaborMap, CV_32F, kernel); // Gabor Filtering is carried out HERE!
     
+    
+    float maxV = *max_element(gaborMap.begin<float>(), gaborMap.end<float>());
+    float minV = *min_element(gaborMap.begin<float>(), gaborMap.end<float>());
+    
+    cout << "maxV: " << maxV << endl;
+    cout << "minV: " << minV << endl;
+
     cv::imshow("Process window", gaborMap);
+    
+    
     cv::Mat Lkernel(kernelSize*20, kernelSize*20, CV_32F);
     cv::resize(kernel, Lkernel, Lkernel.size());
     Lkernel /= 2.;
