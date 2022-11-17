@@ -323,7 +323,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
 					/usr/local/Cellar/opencv/4.6.0/include/opencv4,
-					/Users/fuliye/nlohmann_json/include,
+					/Users/meicet/nlohmann_json/include,
 				);
 				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/opencv/4.6.0/lib;
 				OTHER_LDFLAGS = (
@@ -343,7 +343,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
 					/usr/local/Cellar/opencv/4.6.0/include/opencv4,
-					/Users/fuliye/nlohmann_json/include,
+					/Users/meicet/nlohmann_json/include,
 				);
 				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/opencv/4.6.0/lib;
 				OTHER_LDFLAGS = (
@@ -363,7 +363,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
 					/usr/local/Cellar/opencv/4.6.0/include/opencv4,
-					/Users/fuliye/nlohmann_json/include,
+					/Users/meicet/nlohmann_json/include,
 				);
 				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/opencv/4.6.0/lib;
 				OTHER_LDFLAGS = (
@@ -383,7 +383,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
 					/usr/local/Cellar/opencv/4.6.0/include/opencv4,
-					/Users/fuliye/nlohmann_json/include,
+					/Users/meicet/nlohmann_json/include,
 				);
 				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/opencv/4.6.0/lib;
 				OTHER_LDFLAGS = (
